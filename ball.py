@@ -15,14 +15,18 @@ class Ball:
 
     def draw(self):
 
-        self.image.draw(self.x, self.y)
+        self.image.draw(self.x-server.background.window_left,self.y-server.background.window_bottom)
         draw_rectangle(*self.get_bb())
 
     def update(self):
         pass
 
     def get_bb(self):
-        return self.x - 10, self.y - 10, self.x + 10, self.y + 10
+        return (self.x-server.background.window_left-10,self.y-server.background.window_bottom-10,
+                self.x-server.background.window_left+10,self.y-server.background.window_bottom+10)
 
     def handle_collision(self, group, other):
+        match group:
+            case 'boy:ball':
+                game_world.remove_object(self)
         pass
