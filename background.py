@@ -4,27 +4,28 @@ import server
 from pico2d import *
 
 
+# class FixedBackground:
+#
+#     def __init__(self):
+#         self.image = load_image('futsal_court.png')
+#         self.w, self.h = self.image.w, self.image.h
+#         # fill here
+#         pass
+#
+#     def draw(self):
+#         # modify followings
+#         self.image.draw(get_canvas_width()//2, get_canvas_height()//2)
+#         pass
+#
+#     def update(self):
+#         # fill here
+#         pass
+#
+#     def handle_event(self, event):
+#         pass
+
+# NewFixedBackground
 class FixedBackground:
-
-    def __init__(self):
-        self.image = load_image('futsal_court.png')
-        self.w, self.h = self.image.w, self.image.h
-        # fill here
-        pass
-
-    def draw(self):
-        # modify followings
-        self.image.draw(get_canvas_width()//2, get_canvas_height()//2)
-        pass
-
-    def update(self):
-        # fill here
-        pass
-
-    def handle_event(self, event):
-        pass
-
-class NewFixedBackground:
 
     def __init__(self):
         self.image = load_image('futsal_court.png')
