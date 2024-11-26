@@ -226,6 +226,7 @@ class Boy:
         # self.x=clamp(get_canvas_width()/2,self.x,server.background.w - get_canvas_width()/2)
         # self.y=clamp(get_canvas_height()/2,self.y,server.background.h-get_canvas_height()/2)
 
+        # 월드 좌표계를 화면 좌표로 변환
         self.x = clamp(50.0,self.x,server.background.w - 50.0)
         self.y = clamp(50.0,self.y,server.background.h - 50.0)
 
