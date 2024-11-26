@@ -209,6 +209,7 @@ class Boy:
         # 전체 월드 배경의 중심
         self.x,self.y = server.background.w/2,server.background.h/2
 
+        self.ball_count =0
 
 
     def update(self):
@@ -227,17 +228,18 @@ class Boy:
         # self.y=clamp(get_canvas_height()/2,self.y,server.background.h-get_canvas_height()/2)
 
         # 월드 좌표계를 화면 좌표로 변환
-        # self.x = clamp(50.0,self.x,server.background.w - 50.0)
-        # self.y = clamp(50.0,self.y,server.background.h - 50.0)
+        self.x = clamp(50.0,self.x,server.background.w - 50.0)
+        self.y = clamp(50.0,self.y,server.background.h - 50.0)
 
     def handle_event(self, event):
         self.state_machine.handle_event(('INPUT', event))
 
     def draw(self):
-        # sx,sy=self.x-server.background.window_left,self.y-server.background.window_bottom
-        sx,sy=get_canvas_width()//2,get_canvas_height()//2
+        sx,sy=self.x-server.background.window_left,self.y-server.background.window_bottom
+        #sx,sy=get_canvas_width()//2,get_canvas_height()//2
         self.image.clip_draw(int(self.frame) * 100, self.action * 100, 100, 100, sx, sy)
         self.font.draw(sx - 100, sy + 60, f'({self.x:5.5}, {self.y:5.5})', (255, 255, 0))
+        self.font.draw(sx - 100, sy + 90, f'ball count:{self.ball_count}', (255, 255, 0))
 
 
     def get_bb(self):

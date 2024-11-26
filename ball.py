@@ -2,7 +2,7 @@ from pico2d import *
 import game_world
 import game_framework
 import random
-
+import server
 
 class Ball:
     image = None
@@ -14,6 +14,7 @@ class Ball:
         self.y = y if y else random.randint(100, 924)
 
     def draw(self):
+
         self.image.draw(self.x, self.y)
         draw_rectangle(*self.get_bb())
 
